@@ -6,7 +6,7 @@ import {
 
 interface Options {
   /** Pass `true` to disable all event delivery */
-  disableAjs?: boolean
+  optOut?: boolean
 }
 
 /**
@@ -26,15 +26,15 @@ interface Options {
  *  })
  */
 export class OptOutPlugin implements Plugin {
-  ajsDisabled: boolean
+  optOut: boolean
   name: string
   version: string
   type: Plugin['type'] = 'before'
 
-  constructor({ disableAjs = false }: Options) {
+  constructor({ optOut = false }: Options) {
     this.name = 'Toggle Event Delivery Plugin'
     this.version = '0.1.0'
-    this.ajsDisabled = disableAjs
+    this.optOut = optOut
   }
 
   async load(): Promise<void> {
@@ -67,7 +67,7 @@ export class OptOutPlugin implements Plugin {
 
   /** Cancel event delivery if ajsDisabled flag set to true */
   private gateKeep(ctx: Context): Context {
-    if (!this.ajsDisabled) return ctx
+    if (!this.optOut) return ctx
 
     ctx.cancel(
       new ContextCancelation({
