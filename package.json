@@ -1,0 +1,70 @@
+{
+  "name": "@bueno-systems/analytics-opt-out-plugin",
+  "version": "0.0.0-semantic-release",
+  "description": "A simple @segment/analytics-next plugin to disable event delivery.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Jack Cuthbert <jckcthbrt@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -b",
+    "prepublish": "yarn build",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "test": "echo \"No tests defined\"; exit 0;"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "segment",
+    "segmentio",
+    "analytics-next",
+    "privacy",
+    "gdpr"
+  ],
+  "bugs": {
+    "url": "https://github.com/bueno-systems/analytics-opt-out-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bueno-systems/analytics-opt-out-plugin.git"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/bueno-systems/analytics-opt-out-plugin#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@segment/analytics-next": "^1.43.0",
+    "@types/jest": "^29.0.3",
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "husky": "^8.0.0",
+    "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {
+    "@segment/analytics-next": "^1.40.0"
+  }
+}
