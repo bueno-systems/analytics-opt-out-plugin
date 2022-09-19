@@ -5,6 +5,7 @@
   "author": "Jack Cuthbert <jckcthbrt@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "module": "dist/index.js",
   "exports": {
     ".": "./dist/index.js"
   },
