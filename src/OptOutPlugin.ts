@@ -5,6 +5,7 @@ import {
 } from '@segment/analytics-next'
 
 interface Options {
+  /** Pass `true` to disable all event delivery */
   disableAjs?: boolean
 }
 
@@ -12,6 +13,8 @@ interface Options {
  * Enable or disable event delivery for @segment/analytics-next.
  *
  * @example
+ * import OptOutPlugin from '@bueno-systems/analytics-opt-out-plugin'
+ *
  * AnalyticsBrowser.load({
  *    writeKey: 'ABCD',
  *    plugins: [
@@ -21,9 +24,6 @@ interface Options {
  *    ],
  *    cdnURL: 'https://my.proxy.url',
  *  })
- *
- *
- * @see {@link https://github.com/segmentio/analytics-next/issues/558#issuecomment-1198618761}
  */
 export class OptOutPlugin implements Plugin {
   ajsDisabled: boolean

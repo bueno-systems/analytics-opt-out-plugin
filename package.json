@@ -2,14 +2,16 @@
   "name": "@bueno-systems/analytics-opt-out-plugin",
   "version": "0.0.0-semantic-release",
   "description": "A simple @segment/analytics-next plugin to disable event delivery.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "author": "Jack Cuthbert <jckcthbrt@gmail.com>",
   "license": "MIT",
   "private": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b",
+    "build": "rimraf dist && tsc",
     "prepublish": "yarn build",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "test": "echo \"No tests defined\"; exit 0;"
@@ -61,6 +63,7 @@
     "eslint-plugin-promise": "^6.0.1",
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "semantic-release": "^19.0.5",
     "typescript": "^4.8.3"
   },
