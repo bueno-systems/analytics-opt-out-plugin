@@ -4,7 +4,6 @@
   "description": "A simple @segment/analytics-next plugin to disable event delivery.",
   "author": "Jack Cuthbert <jckcthbrt@gmail.com>",
   "license": "MIT",
-  "private": false,
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
@@ -69,5 +68,6 @@
   },
   "peerDependencies": {
     "@segment/analytics-next": "^1.40.0"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
